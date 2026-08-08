@@ -50,14 +50,21 @@
       <a href="#contato">Contato</a>
     </nav>
 
-    <a href="https://wa.me/5547984124211?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20conhecer%20os%20sabonetes%20da%20Rosa%20Branca." class="btn btn-primary btn-sm header-cta" target="_blank" rel="noopener">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 3.4z"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0zm0 0c0 2 2 4 4 4"/></svg>
-      Comprar pelo WhatsApp
-    </a>
+    <div class="header-actions">
+      <button class="cart-toggle" id="cart-toggle" aria-label="Abrir carrinho" aria-haspopup="dialog" aria-controls="cart-drawer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cart-count" hidden>0</span>
+      </button>
 
-    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-    </button>
+      <a href="https://wa.me/5547984124211?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20conhecer%20os%20sabonetes%20da%20Rosa%20Branca." class="btn btn-primary btn-sm header-cta" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 3.4z"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0zm0 0c0 2 2 4 4 4"/></svg>
+        Comprar pelo WhatsApp
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -89,59 +96,127 @@
 
       <div class="products-grid">
 
-        <article class="product-card">
+        <article class="product-card" data-product-id="camomila" data-product-name="Camomila com Açafrão e Óleo de Amêndoas" data-product-img="assets/img/produto-camomila.jpg">
           <div class="product-media">
             <img src="assets/img/produto-camomila.jpg" alt="Sabonetes artesanais Camomila com Açafrão e Óleo de Amêndoas" loading="lazy" width="480" height="640">
           </div>
           <div class="product-body">
             <h3>Camomila com Açafrão e Óleo de Amêndoas</h3>
             <p>Com notas suaves de camomila e o toque envolvente do açafrão, este sabonete desperta uma sensação de calma e aconchego. O óleo de amêndoas complementa a experiência com um toque delicado.</p>
-            <div class="product-footer">
-              <span class="price"><span class="price-label">A partir de</span> R$ 9,20</span>
-              <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://wa.me/5547984124211?text=Ol%C3%A1!%20Tenho%20interesse%20no%20sabonete%20Camomila%20com%20A%C3%A7afr%C3%A3o%20e%20%C3%93leo%20de%20Am%C3%AAndoas.">Quero este</a>
+
+            <div class="size-selector" role="group" aria-label="Escolha o tamanho">
+              <button type="button" class="size-btn is-active" data-size="50g" data-price="9.20">50g</button>
+              <button type="button" class="size-btn" data-size="80g" data-price="14.80">80g</button>
+              <button type="button" class="size-btn" data-size="100g" data-price="18.50">100g</button>
+              <button type="button" class="size-btn" data-size="130g" data-price="20.90">130g</button>
             </div>
+
+            <div class="product-footer">
+              <span class="price"><span class="price-label">Preço</span> <span class="price-value">R$ 9,20</span></span>
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir quantidade">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar quantidade">+</button>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-add-cart">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Adicionar ao carrinho
+            </button>
           </div>
         </article>
 
-        <article class="product-card">
+        <article class="product-card" data-product-id="floral" data-product-name="Floral com Notas de Amêndoas" data-product-img="assets/img/produto-floral.jpg">
           <div class="product-media">
             <img src="assets/img/produto-floral.jpg" alt="Sabonetes artesanais Floral com Notas de Amêndoas, na cor rosa" loading="lazy" width="480" height="640">
           </div>
           <div class="product-body">
             <h3>Floral com Notas de Amêndoas</h3>
             <p>A leveza das flores e o aconchego das amêndoas se unem em uma fragrância delicada, inspirada na simplicidade da natureza. Um convite para desacelerar e respirar fundo.</p>
-            <div class="product-footer">
-              <span class="price"><span class="price-label">A partir de</span> R$ 9,20</span>
-              <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://wa.me/5547984124211?text=Ol%C3%A1!%20Tenho%20interesse%20no%20sabonete%20Floral%20com%20Notas%20de%20Am%C3%AAndoas.">Quero este</a>
+
+            <div class="size-selector" role="group" aria-label="Escolha o tamanho">
+              <button type="button" class="size-btn is-active" data-size="50g" data-price="9.20">50g</button>
+              <button type="button" class="size-btn" data-size="80g" data-price="14.80">80g</button>
+              <button type="button" class="size-btn" data-size="100g" data-price="18.50">100g</button>
+              <button type="button" class="size-btn" data-size="130g" data-price="20.90">130g</button>
             </div>
+
+            <div class="product-footer">
+              <span class="price"><span class="price-label">Preço</span> <span class="price-value">R$ 9,20</span></span>
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir quantidade">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar quantidade">+</button>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-add-cart">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Adicionar ao carrinho
+            </button>
           </div>
         </article>
 
-        <article class="product-card">
+        <article class="product-card" data-product-id="erva-doce" data-product-name="Erva Doce com Toque Natural de Couve e Óleo de Amêndoas" data-product-img="assets/img/produto-erva-doce.jpg">
           <div class="product-media">
             <img src="assets/img/produto-erva-doce.jpg" alt="Sabonetes artesanais Erva Doce com Toque Natural de Couve e Óleo de Amêndoas" loading="lazy" width="480" height="640">
           </div>
           <div class="product-body">
             <h3>Erva Doce com Toque Natural de Couve e Óleo de Amêndoas</h3>
             <p>A leveza da erva-doce encontra a autenticidade dos elementos naturais em uma composição que desperta sensações de frescor e tranquilidade.</p>
-            <div class="product-footer">
-              <span class="price"><span class="price-label">A partir de</span> R$ 9,20</span>
-              <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://wa.me/5547984124211?text=Ol%C3%A1!%20Tenho%20interesse%20no%20sabonete%20Erva%20Doce%20com%20Couve%20e%20%C3%93leo%20de%20Am%C3%AAndoas.">Quero este</a>
+
+            <div class="size-selector" role="group" aria-label="Escolha o tamanho">
+              <button type="button" class="size-btn is-active" data-size="50g" data-price="9.20">50g</button>
+              <button type="button" class="size-btn" data-size="80g" data-price="14.80">80g</button>
+              <button type="button" class="size-btn" data-size="100g" data-price="18.50">100g</button>
+              <button type="button" class="size-btn" data-size="130g" data-price="20.90">130g</button>
             </div>
+
+            <div class="product-footer">
+              <span class="price"><span class="price-label">Preço</span> <span class="price-value">R$ 9,20</span></span>
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir quantidade">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar quantidade">+</button>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-add-cart">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Adicionar ao carrinho
+            </button>
           </div>
         </article>
 
-        <article class="product-card">
+        <article class="product-card" data-product-id="lima-persia" data-product-name="Lima Pérsia com Açafrão, Couve e Óleo de Amêndoas" data-product-img="assets/img/produto-lima-persia.jpg">
           <div class="product-media">
             <img src="assets/img/produto-lima-persia.jpg" alt="Sabonetes artesanais Lima Pérsia com Açafrão, Couve e Óleo de Amêndoas" loading="lazy" width="480" height="640">
           </div>
           <div class="product-body">
             <h3>Lima Pérsia com Açafrão, Couve e Óleo de Amêndoas</h3>
             <p>Marcado pelo frescor cítrico da lima-pérsia e por nuances verdes e naturais, este sabonete oferece uma experiência leve e revitalizante.</p>
-            <div class="product-footer">
-              <span class="price"><span class="price-label">A partir de</span> R$ 9,20</span>
-              <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://wa.me/5547984124211?text=Ol%C3%A1!%20Tenho%20interesse%20no%20sabonete%20Lima%20P%C3%A9rsia%20com%20A%C3%A7afr%C3%A3o%2C%20Couve%20e%20%C3%93leo%20de%20Am%C3%AAndoas.">Quero este</a>
+
+            <div class="size-selector" role="group" aria-label="Escolha o tamanho">
+              <button type="button" class="size-btn is-active" data-size="50g" data-price="9.20">50g</button>
+              <button type="button" class="size-btn" data-size="80g" data-price="14.80">80g</button>
+              <button type="button" class="size-btn" data-size="100g" data-price="18.50">100g</button>
+              <button type="button" class="size-btn" data-size="130g" data-price="20.90">130g</button>
             </div>
+
+            <div class="product-footer">
+              <span class="price"><span class="price-label">Preço</span> <span class="price-value">R$ 9,20</span></span>
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn qty-minus" aria-label="Diminuir quantidade">−</button>
+                <span class="qty-value">1</span>
+                <button type="button" class="qty-btn qty-plus" aria-label="Aumentar quantidade">+</button>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-add-cart">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Adicionar ao carrinho
+            </button>
           </div>
         </article>
 
@@ -230,7 +305,7 @@
         </div>
       </div>
       <div class="center">
-        <a href="https://wa.me/5547984124211?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20de%20sabonetes%20Rosa%20Branca." class="btn btn-primary" target="_blank" rel="noopener">Fazer meu pedido pelo WhatsApp</a>
+        <button type="button" class="btn btn-primary" id="open-cart-cta">Fazer meu pedido pelo WhatsApp</button>
       </div>
     </div>
   </section>
@@ -322,6 +397,38 @@
 <a class="whatsapp-float" href="https://wa.me/5547984124211?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20conhecer%20os%20sabonetes%20da%20Rosa%20Branca." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 3.4z"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0zm0 0c0 2 2 4 4 4"/></svg>
 </a>
+
+<!-- CARRINHO -->
+<div class="cart-overlay" id="cart-overlay" hidden></div>
+<aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
+  <div class="cart-drawer-header">
+    <h2 id="cart-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      Seu carrinho
+    </h2>
+    <button class="cart-close" id="cart-close" aria-label="Fechar carrinho">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="cart-drawer-body" id="cart-items">
+    <!-- preenchido via JS -->
+  </div>
+
+  <div class="cart-drawer-footer">
+    <div class="cart-total-row">
+      <span>Total</span>
+      <span id="cart-total">R$ 0,00</span>
+    </div>
+    <a href="#" id="cart-checkout" class="btn btn-primary btn-block" target="_blank" rel="noopener">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 3.4z"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0zm0 0c0 2 2 4 4 4"/></svg>
+      Finalizar pedido pelo WhatsApp
+    </a>
+    <button class="btn btn-outline btn-block" id="cart-continue">Continuar comprando</button>
+  </div>
+</aside>
+
+<div class="cart-toast" id="cart-toast" role="status" aria-live="polite"></div>
 
 <script src="js/script.js"></script>
 </body>
